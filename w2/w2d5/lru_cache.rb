@@ -21,6 +21,7 @@ class LRUCache
      if self.contents.length > @capacity
        shorten
      end
+     @contents
    end
 
    # HERE'S HOW THE SOLUTION DEALT WITH ADDING:
@@ -38,7 +39,7 @@ class LRUCache
   # end
 
    def show
-     p @contents
+     p @contents.dup
    end
 
    def shorten
@@ -75,11 +76,15 @@ if __FILE__ == $PROGRAM_NAME
 
   bob_cache = LRUCache.new(4)
 
+  bob_cache
+
   bob_cache.add("tangled up in blue")
   bob_cache.add("michael g")
   bob_cache.add(70)
 
-  @bob_cache.show
+  bob_cache.show
+
+
 
 
 end
