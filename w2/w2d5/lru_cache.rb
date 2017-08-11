@@ -45,7 +45,7 @@ class LRUCache
    def shorten
      if @contents.length > @capacity
          until @contents.length <= @capacity
-           shift
+           @contents.shift
          end
      end
    end
@@ -55,7 +55,7 @@ class LRUCache
    def shorten
      if @contents.length > @capacity
          until @contents.length <= @capacity
-           shift
+           @contents.shift
          end
      end
    end
@@ -81,6 +81,8 @@ if __FILE__ == $PROGRAM_NAME
   bob_cache.add("tangled up in blue")
   bob_cache.add("michael g")
   bob_cache.add(70)
+  bob_cache.add("feel my love")
+  bob_cache.add("one too many things")
 
   bob_cache.show
 
